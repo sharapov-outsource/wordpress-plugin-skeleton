@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    WordPress_Plugin_Skeleton
+ * @subpackage WordPress_Plugin_Skeleton/model
  */
 
 namespace WordPressPluginSkeleton\Model;
@@ -28,8 +28,8 @@ use WordPressPluginSkeleton\Frontend\Frontend;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    WordPress_Plugin_Skeleton
+ * @subpackage WordPress_Plugin_Skeleton/model
  * @author     Your Name <email@example.com>
  */
 class Core {
@@ -40,7 +40,7 @@ class Core {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Loader $loader Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -49,7 +49,7 @@ class Core {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 * @var      string $plugin_name The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_name;
 
@@ -58,7 +58,7 @@ class Core {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
+	 * @var      string $version The current version of the plugin.
 	 */
 	protected $version;
 
@@ -72,8 +72,8 @@ class Core {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'WPS_VERSION' ) ) {
-			$this->version = WPS_VERSION;
+		if ( defined( 'WORDPRESS_PLUGIN_SKELETON_VERSION' ) ) {
+			$this->version = WORDPRESS_PLUGIN_SKELETON_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -108,24 +108,24 @@ class Core {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once realpath(plugin_dir_path( dirname( __FILE__ ) ) . 'model/loader.php');
+		require_once realpath( plugin_dir_path( dirname( __FILE__ ) ) . 'model/loader.php' );
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once realpath(plugin_dir_path( dirname( __FILE__ ) ) . 'model/i18n.php');
+		require_once realpath( plugin_dir_path( dirname( __FILE__ ) ) . 'model/i18n.php' );
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once realpath(plugin_dir_path( dirname( __FILE__ ) ) . 'admin/admin.php');
+		require_once realpath( plugin_dir_path( dirname( __FILE__ ) ) . 'admin/admin.php' );
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once realpath(plugin_dir_path( dirname( __FILE__ ) ) . 'frontend/frontend.php');
+		require_once realpath( plugin_dir_path( dirname( __FILE__ ) ) . 'frontend/frontend.php' );
 
 		$this->loader = new Loader();
 
@@ -193,8 +193,8 @@ class Core {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
+	 * @since     1.0.0
 	 */
 	public function get_plugin_name() {
 		return $this->plugin_name;
@@ -203,8 +203,8 @@ class Core {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
 	 * @return    \WordPressPluginSkeleton\Model\Loader    Orchestrates the hooks of the plugin.
+	 * @since     1.0.0
 	 */
 	public function get_loader() {
 		return $this->loader;
@@ -213,8 +213,8 @@ class Core {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.0
 	 * @return    string    The version number of the plugin.
+	 * @since     1.0.0
 	 */
 	public function get_version() {
 		return $this->version;

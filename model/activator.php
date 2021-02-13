@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    WordPress_Plugin_Skeleton
+ * @subpackage WordPress_Plugin_Skeleton/model
  */
 
 namespace WordPressPluginSkeleton\Model;
@@ -18,8 +18,8 @@ namespace WordPressPluginSkeleton\Model;
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    WordPress_Plugin_Skeleton
+ * @subpackage WordPress_Plugin_Skeleton/model
  * @author     Your Name <email@example.com>
  */
 class Activator {
