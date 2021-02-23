@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * The plugin bootstrap file
  * This file is read by WordPress to generate the plugin information in the plugin
